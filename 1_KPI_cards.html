@@ -7,7 +7,10 @@
     <title>Bootstrap KPI Card</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <style>
+    <!-- <style>
+        .container-xxl {
+            background-color: azure;
+        }
         .kpi-card {
             width: 220px;
             margin: 2px;
@@ -30,13 +33,54 @@
         h6 {
             font-size: small;
         }
+    </style> -->
+    <style>
+        .container-xxl {
+            background-color: azure;
+        }
+
+        .kpi-card {
+            width: 13.75rem;
+            /* 220px = 220 / 16 = 13.75rem */
+            margin: 0.125rem;
+            /* 2px = 2 / 16 = 0.125rem */
+            padding: 0.125rem;
+            /* 2px = 0.125rem */
+        }
+
+        .kpi-card .card-body {
+            padding: 0.25rem;
+            /* 4px = 0.25rem */
+        }
+
+        .kpi-text {
+            text-align: center;
+            margin: 0.125rem;
+            /* 2px = 0.125rem */
+        }
+
+        h4 {
+            font-size: 1.7rem;
+            /* x-large approx */
+        }
+
+        h5 {
+            font-size: 1rem;
+            /* medium approx */
+        }
+
+        h6 {
+            font-size: 0.875rem;
+            /* small approx */
+        }
     </style>
+
 </head>
 
 <body>
     <h1>Bootstrap KPI Cards!</h1>
     <hr>
-    <div class="container-xxl d-flex justify-content-evenly flex-wrap p-1">
+    <div class="d-flex justify-content-evenly flex-wrap">
         <div class="card kpi-card">
             <div class="card-body">
                 <h5 class="card-title">Total Charges</h5>

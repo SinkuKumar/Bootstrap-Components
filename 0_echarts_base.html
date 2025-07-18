@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Include the ECharts file you just downloaded -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
+    <style>
+        /* Set the size of the chart container */
+        #main {
+            width: 40rem;
+            height: 30rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Prepare a DOM with a defined width and height for ECharts -->
+    <div id="main"></div>
+    <script>
+        // Initialize the ECharts instance based on the prepared DOM
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // Specify the configuration items and data for the chart
+        var option = {
+            title: {
+                text: 'ECharts Introduction Example'
+            },
+            tooltip: {},
+            xAxis: {
+                data: [
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks",
+                    "Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks"
+
+                ]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Sales',
+                type: 'line',
+                data: [
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20,
+                    5, 20, 36, 10, 10, 20
+
+                ]
+            }]
+        };
+
+        // Use the specified configuration items and data to show the chart
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

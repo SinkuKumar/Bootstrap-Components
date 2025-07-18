@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Transaction Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <style>
+    #main {
+      width: 100%;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+
+  <script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    var data = [
+      ['2025-05-01', 511.06],
+      ['2025-05-02', 364.92],
+      ['2025-05-03', 20684.93],
+      ['2025-05-04', 60.00],
+      ['2025-05-05', 115241.28],
+      ['2025-05-06', 6371.87],
+      ['2025-05-07', 415.00],
+      ['2025-05-08', 44275.41],
+      ['2025-05-09', 46142.81],
+      ['2025-05-10', 0.00],
+      ['2025-05-11', 0.00],
+      ['2025-05-12', 112917.21],
+      ['2025-05-13', 82820.27],
+      ['2025-05-14', 11515.50],
+      ['2025-05-15', 45026.90],
+      ['2025-05-16', 107724.00],
+      ['2025-05-17', 97463.62],
+      ['2025-05-18', 55.24],
+      ['2025-05-19', 109521.75],
+      ['2025-05-20', 13493.01],
+      ['2025-05-21', 53059.71],
+      ['2025-05-22', 47884.09],
+      ['2025-05-23', 58634.44],
+      ['2025-05-24', 130.00],
+      ['2025-05-25', 190.00],
+      ['2025-05-26', 523.82],
+      ['2025-05-27', 87515.64],
+      ['2025-05-28', 86176.13],
+      ['2025-05-29', 194852.84],
+      ['2025-05-30', 23934.68],
+      ['2025-05-31', 75897.17],
+      ['2025-06-01', 60.00],
+      ['2025-06-02', 87522.42],
+      ['2025-06-03', 33449.22],
+      ['2025-06-04', 49349.91],
+      ['2025-06-05', 31581.53],
+      ['2025-06-06', 2023.28],
+      ['2025-06-08', 240.00],
+      ['2025-06-09', 1092.43],
+      ['2025-06-10', 9311.36],
+      ['2025-06-11', 81.20],
+      ['2025-06-12', 754.18],
+      ['2025-06-13', -456.35]
+    ];
+
+    option = {
+      title: {
+        text: 'Transaction Amounts Over Time'
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        },
+        formatter: params => {
+          let val = params[0].data[1].toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+          return `${params[0].axisValue}<br/>Amount: ${val}`;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: data.map(item => item[0]),
+        boundaryGap: false
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          formatter: '${value}'
+        }
+      },
+      dataZoom: [
+        {
+          type: 'slider',
+          start: 0,
+          end: 20, // default to show ~1 week
+          xAxisIndex: 0
+        },
+        {
+          type: 'inside',
+          start: 0,
+          end: 20
+        }
+      ],
+      series: [
+        {
+          name: 'Adjusted Amount',
+          type: 'line',
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 8,
+          itemStyle: {
+            color: '#5470C6'
+          },
+          areaStyle: {
+            color: 'rgba(84,112,198,0.2)'
+          },
+          data: data.map(item => item[1])
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  </script>
+</body>
+</html>
